@@ -58,11 +58,16 @@ const Navbar = () => {
           <Link to="/posts?sort=popular" onClick={() => setOpen(false)}>Most Popular</Link>
           <Link to="/blog" onClick={() => setOpen(false)}>Blog</Link>
           <Link to="/blog" onClick={() => setOpen(false)}>Contact Us</Link>
-          <Link to="/login" onClick={() => setOpen(false)}>
-            <button className="py-2 px-4 rounded-3xl bg-black text-white">
-              Login 👋
-            </button>
-          </Link>
+          <SignedOut>
+            <Link to="/login" onClick={() => setOpen(false)}>
+              <button className="py-2 px-4 rounded-3xl bg-black text-white">
+                Login 👋
+              </button>
+            </Link>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </div>
 
