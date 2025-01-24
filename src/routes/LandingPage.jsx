@@ -2,7 +2,7 @@ import React from 'react';
 
 const LandingPage = () => {
   return (
-    <div className="flex-grow flex flex-col items-center justify-center relative h-[calc(90vh-80px)]">
+    <div className="flex-grow flex flex-col items-center justify-center relative h-[calc(100vh-80px)]">
       {/* Video */}
       <video
         autoPlay
