@@ -13,7 +13,7 @@ const Events = () => {
   return (
     <div className="min-h-[60vh] bg-cover bg-center mb-10" style={{ backgroundImage: 'url(events.svg)' }}>
       <div className="container mx-auto px-3 py-3">
-        <h2 className="text-center text-5xl font-bold text-black mb-10">Upcoming Events</h2>
+        <h2 className="text-center text-4xl font-bold text-black mb-10">Upcoming Events</h2>
         <div className="flex flex-wrap justify-center gap-5">
           {events.map((event) => (
             <div key={event.id} className="w-full sm:w-[45%] md:w-[30%] lg:w-[20%] bg-white rounded-lg shadow-lg overflow-hidden">
