@@ -181,7 +181,7 @@ const Write = () => {
           disabled={mutation.isPending || (0 < progress && progress < 100)}
           className="bg-green-600 text-white font-medium rounded-xl mt-4 p-2 w-36 disabled:bg-green-400 disabled:cursor-not-allowed"
         >
-          {mutation.isPending ? "Loading..." : "Send"}
+          {mutation.isPending ? "Posting..." : "Post"}
         </button>
 
         {/* Progress indicator */}

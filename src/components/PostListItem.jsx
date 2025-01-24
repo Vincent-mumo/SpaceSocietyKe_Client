@@ -4,33 +4,33 @@ import { format } from "timeago.js";
 
 const PostListItem = ({ post }) => {
   return (
-    <div className="flex flex-col xl:flex-row gap-1 mb-12">
+    <div className="flex flex-col gap-2 p-2 border rounded-lg shadow-md w-full max-w-[300px] my-6 mx-1">
       {/* image */}
       {post?.img && (
-        <div className="md:hidden xl:block xl:w-1/3 h-[300px]">
+        <div className="w-full h-40">
           <Image
             src={post?.img}
-            className="rounded-2xl object-cover w-full h-full"
-            w="505"
+            className="rounded-lg object-cover w-full h-full"
+            w="400"
           />
         </div>
       )}
       {/* details */}
-      <div className="flex flex-col gap-2 xl:w-2/3">
-        <Link to={`/${post?.slug}`} className="text-4xl font-semibold">
+      <div className="flex flex-col gap-2">
+        <Link to={`/${post?.slug}`} className="text-xl font-semibold hover:text-blue-600">
           {post?.title}
         </Link>
-        <div className="flex items-center gap-2 text-gray-900 text-sm">
+        <div className="flex flex-wrap items-center gap-1 text-gray-600 text-sm">
           <span>Written by</span>
-          <Link className="text-blue-900" to={`/posts?author=${post?.user?.username}`}>
+          <Link className="text-blue-600 hover:underline" to={`/posts?author=${post?.user?.username}`}>
             {post?.user?.username}
           </Link>
           <span>on</span>
-          <Link className="text-text-green-900">{post?.category}</Link>
+          <Link className="text-green-600 hover:underline">{post?.category}</Link>
           <span>{format(post?.createdAt)}</span>
         </div>
-        <p>{post?.desc}</p>
-        <Link to={`/${post?.slug}`} className="underline text-green-900 text-sm">
+        <p className="text-gray-700 line-clamp-3">{post?.desc}</p>
+        <Link to={`/${post?.slug}`} className="text-green-600 hover:underline text-sm">
           Read More
         </Link>
       </div>

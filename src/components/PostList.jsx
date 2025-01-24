@@ -1,5 +1,5 @@
 import PostListItem from "./PostListItem";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useSearchParams } from "react-router-dom";
@@ -34,11 +34,7 @@ const PostList = () => {
       lastPage.hasMore ? pages.length + 1 : undefined,
   });
 
-  // if (status === "loading") return "Loading...";
   if (isFetching) return "Loading...";
-  
-
-  // if (status === "error") return "Something went wrong!";
   if (error) return "Something went wrong!";
 
   const allPosts = data?.pages?.flatMap((page) => page.posts) || [];
@@ -55,9 +51,13 @@ const PostList = () => {
         </p>
       }
     >
-      {allPosts.map((post) => (
-        <PostListItem key={post?._id} post={post} />
-      ))}
+      <div
+        className="flex flex-wrap "
+      >
+        {allPosts.map((post) => (
+          <PostListItem key={post?._id} post={post} />
+        ))}
+      </div>
     </InfiniteScroll>
   );
 };
