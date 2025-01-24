@@ -3,32 +3,38 @@ import MainCategories from "../components/MainCategories";
 import FeaturedPosts from "../components/FeaturedPosts";
 import PostList from "../components/PostList";
 import Image from "../components/Image";
+import { SignedIn, SignedOut } from "@clerk/clerk-react"; // Import SignedIn and SignedOut
 
 const Blog = () => {
   return (
     <div className="mt-4 flex flex-col gap-8 px-5 md:px-10">
       {/* BREADCRUMB */}
-      <div className="flex gap-2 text-sm md:text-base">
+      <div className="flex gap-2 text-sm md:text-base flex-wrap">
         <Link to="/" className="text-gray-600 hover:text-blue-800">
           Home
         </Link>
         <span className="text-gray-400 font-medium">•</span>
         <span className="text-blue-800 font-medium">Blogs and Articles</span>
         <span className="text-gray-400">•</span>
-        <Link to="/posts?sort=trending" className="text-blue-800 cursor-pointer">Trending</Link>
-        <span className="text-gray-400">•</span>
-        <Link to="/posts?sort=popular text-blue-800" className="text-blue-800 cursor-pointer">Most Popular</Link>
-        <span className="text-gray-400">•</span>
-        <Link to="/write">
-          <Image src="write.png" className="h-5 w-5 cursor-pointer" />
+        <Link to="/posts?sort=trending" className="text-blue-800 cursor-pointer">
+          Trending
         </Link>
-
+        <span className="text-gray-400">•</span>
+        <Link to="/posts?sort=popular" className="text-blue-800">
+          Most Popular
+        </Link>
+        <SignedIn>
+          <span className="text-gray-400">•</span>
+          <Link to="/write">
+            <Image src="write.png" className="h-5 w-5 cursor-pointer" />
+          </Link>
+        </SignedIn>
       </div>
 
       {/* INTRODUCTION */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Titles */}
-        <div className="flex-1" >
+        <div className="flex-1">
           <h1 className="text-gray-800 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Unlock the Universe: Rockets, Galaxies, Science, and Life-Changing Discoveries.
           </h1>
@@ -40,7 +46,7 @@ const Blog = () => {
         {/* Animated Button */}
         <Link to="/write" className="relative">
           {/* Mobile Button (Small with Text Path) */}
-          <div className="md:hidden w-24 h-24 relative" >
+          <div className="md:hidden w-24 h-24 relative">
             <svg
               viewBox="0 0 200 200"
               width="100"
@@ -78,7 +84,7 @@ const Blog = () => {
           </div>
 
           {/* Desktop Button (Animated) */}
-          <div className="hidden md:block" >
+          <div className="hidden md:block">
             <svg
               viewBox="0 0 200 200"
               width="200"
@@ -121,12 +127,12 @@ const Blog = () => {
       <MainCategories />
 
       {/* FEATURED POSTS */}
-      <div className=" md:h-auto">
+      <div className="md:h-auto">
         <FeaturedPosts />
       </div>
 
       {/* POST LIST */}
-      <div className="mt-2 md:mt-8"> {/* Adjusted margin for mobile */}
+      <div className="mt-2 md:mt-8">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
           Recent Posts
         </h1>
