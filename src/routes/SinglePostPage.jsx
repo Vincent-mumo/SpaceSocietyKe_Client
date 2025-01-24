@@ -60,7 +60,7 @@ const SinglePostPage = () => {
       {/* Post content */}
       <div className="flex flex-col md:flex-row gap-12 justify-between">
         {/* Main content */}
-        <div className="lg:text-lg flex flex-col gap-6 text-justify p-5 lg:p-10">
+        <div className="lg:text-lg flex flex-col gap-6 text-justify p-1 lg:p-1">
           {/* Render the sanitized post content as HTML */}
           <div
             dangerouslySetInnerHTML={{ __html: sanitizedContent }}
