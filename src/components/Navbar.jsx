@@ -75,7 +75,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/events">Events</Link>
-        <Link to="">Contact Us</Link>
+        <Link to="/blog">Contact Us</Link>
         <SignedOut>
           <Link to="/login">
             <button className="py-2 px-4 rounded-3xl bg-black text-white">
