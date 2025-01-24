@@ -4,7 +4,7 @@ import { format } from "timeago.js";
 
 const PostListItem = ({ post }) => {
   return (
-    <div className="flex flex-col gap-2 p-2 border rounded-lg shadow-md w-full max-w-[300px] my-6 mx-1">
+    <div className="flex flex-col gap-2 p-2 border rounded-lg shadow-md  w-[300px] sm: w-[400px] my-6 mx-1">
       {/* image */}
       {post?.img && (
         <div className="w-full h-40">
