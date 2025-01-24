@@ -13,9 +13,9 @@ const Navbar = () => {
         <Image
           src="logo.jpg"
           alt="loading"
-          w={60} // Default width for desktop
-          h={60} // Default height for desktop
-          className="rounded-full md:w-[60px] md:h-[60px] w-[35px] h-[35px]" // Responsive width and height
+          w={60}
+          h={60}
+          className="rounded-full md:w-[60px] md:h-[60px] w-[35px] h-[35px]"
         />
         <span>Space Society Kenya</span>
       </Link>
@@ -25,33 +25,19 @@ const Navbar = () => {
         {/* MOBILE BUTTON */}
         <div
           className="cursor-pointer text-4xl"
-          onClick={() => setOpen((prev) => !prev)}
+          onClick={() => setOpen(!open)}
         >
           <div className="flex flex-col gap-[5.4px]">
-            <div
-              className={`h-[3px] rounded-md w-6 bg-black origin-left transition-all ease-in-out ${
-                open && "rotate-45"
-              }`}
-            ></div>
-            <div
-              className={`h-[3px] rounded-md w-6 bg-black transition-all ease-in-out ${
-                open && "opacity-0"
-              }`}
-            ></div>
-            <div
-              className={`h-[3px] rounded-md w-6 bg-black origin-left transition-all ease-in-out ${
-                open && "-rotate-45"
-              }`}
-            ></div>
+            <div className={`h-[3px] rounded-md w-6 bg-black origin-left transition-all ease-in-out ${open ? 'rotate-45' : ''}`}></div>
+            <div className={`h-[3px] rounded-md w-6 bg-black transition-all ease-in-out ${open ? 'opacity-0' : ''}`}></div>
+            <div className={`h-[3px] rounded-md w-6 bg-black origin-left transition-all ease-in-out ${open ? '-rotate-45' : ''}`}></div>
           </div>
         </div>
 
         {/* MOBILE LINK LIST */}
-        <div
-          className={`w-full h-screen bg-[#e6e6ff] flex flex-col items-center justify-center gap-8 font-medium text-lg absolute top-16 transition-all ease-in-out ${
-            open ? "-right-0" : "-right-[100%]"
-          }`}
-          style={{ zIndex: 1000 }} // Added z-index to ensure it appears above other elements
+        <div 
+          className={`fixed top-16 left-0 w-full h-screen bg-[#e6e6ff] flex flex-col items-center justify-center gap-8 font-medium text-lg transition-all ease-in-out overflow-y-auto ${open ? 'translate-x-0' : '-translate-x-full'}`}
+          style={{ zIndex: 1000 }}
         >
           <Link to="/" onClick={() => setOpen(false)}>Home</Link>
           <Link to="/events" onClick={() => setOpen(false)}>Events</Link>
