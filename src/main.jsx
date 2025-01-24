@@ -14,6 +14,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LandingPage from "./routes/LandingPage.jsx";
 import Blog from "./routes/Blog.jsx";
+import HomePage from "./routes/HomePage.jsx";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <LandingPage />, 
+        element: <HomePage />, 
       },
       {
         path: "/blog",
