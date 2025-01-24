@@ -74,8 +74,6 @@ const Navbar = () => {
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
         <Link to="/">Home</Link>
-        <Link to="/posts?sort=trending">Trending</Link>
-        <Link to="/posts?sort=popular">Most Popular</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/blog">Events</Link>
         <Link to="/blog">Contact Us</Link>
